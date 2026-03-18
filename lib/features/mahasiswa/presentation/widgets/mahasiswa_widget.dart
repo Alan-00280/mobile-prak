@@ -108,7 +108,7 @@ class _ModernMahasiswaCardState extends State<ModernMahasiswaCard>
                   ),
                   child: Center(
                     child: Text(
-                      widget.mahasiswa.nama.substring(0, 1).toUpperCase(),
+                      widget.mahasiswa.name.substring(0, 1).toUpperCase(),
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 24,
@@ -126,7 +126,7 @@ class _ModernMahasiswaCardState extends State<ModernMahasiswaCard>
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        widget.mahasiswa.nama,
+                        widget.mahasiswa.name,
                         style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -139,22 +139,15 @@ class _ModernMahasiswaCardState extends State<ModernMahasiswaCard>
                       const SizedBox(height: 8),
 
                       _buildInfoRow(
-                        Icons.badge_outlined,
-                        'NIM: ${widget.mahasiswa.nim}',
+                        Icons.account_circle_rounded,
+                        'email: ${widget.mahasiswa.email}',
                       ),
 
                       const SizedBox(height: 4),
 
                       _buildInfoRow(
-                        Icons.email_outlined,
-                        widget.mahasiswa.email,
-                      ),
-
-                      const SizedBox(height: 4),
-
-                      _buildInfoRow(
-                        Icons.school_outlined,
-                        widget.mahasiswa.jurusan,
+                        Icons.comment_rounded,
+                        widget.mahasiswa.body,
                       ),
                     ],
                   ),
@@ -237,7 +230,7 @@ class MahasiswaListView extends StatelessWidget {
             return ModernMahasiswaCard(
               mahasiswa: mahasiswa,
               onTap: () {
-                debugPrint("Clicked ${mahasiswa.nama}");
+                debugPrint("Clicked ${mahasiswa.name}");
               },
             );
           }
@@ -248,16 +241,15 @@ class MahasiswaListView extends StatelessWidget {
             child: ListTile(
               leading: CircleAvatar(
                 child: Text(
-                  mahasiswa.nama.substring(0, 1).toUpperCase(),
+                  mahasiswa.name.substring(0, 1).toUpperCase(),
                 ),
               ),
-              title: Text(mahasiswa.nama),
+              title: Text(mahasiswa.name),
               subtitle: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("NIM: ${mahasiswa.nim}"),
-                  Text(mahasiswa.email),
-                  Text(mahasiswa.jurusan),
+                  Text("email: ${mahasiswa.email}"),
+                  Text(mahasiswa.body),
                 ],
               ),
               trailing: const Icon(Icons.arrow_forward_ios),
