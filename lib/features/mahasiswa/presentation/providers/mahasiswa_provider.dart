@@ -19,7 +19,7 @@ class MahasiswaNotifier extends StateNotifier<AsyncValue<List<MahasiswaModel>>> 
 
     try {
       final data = await _repository.getMahasiswaList();
-      state = AsyncValue.data(data);
+      state = AsyncValue.data(data);  
     } catch (error, stackTrace) {
       state = AsyncValue.error(error, stackTrace);
     }

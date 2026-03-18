@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hello_flutter/features/dosen/presentation/pages/dosen_page.dart';
 import 'package:hello_flutter/features/mahasiswa/presentation/pages/mahasiswa_page.dart';
-import 'package:hello_flutter/features/mahasiswa_aktif/presentation/pages/mahasiswa%20aktif_page.dart';
+import 'package:hello_flutter/features/mahasiswa_aktif/presentation/pages/mahasiswa_aktif_page.dart';
+
 import 'package:hello_flutter/features/profile/presentation/pages/profile_page.dart';
 import '../../../../core/constant/app_constant.dart';
 import '../../../../core/widgets/common_widgets.dart';
@@ -25,7 +26,7 @@ class DashboardPage extends ConsumerWidget {
           return Icons.school_rounded;
         case 'Mahasiswa Aktif':
           return Icons.person_outline_rounded;
-        case 'Mahasiswa Lulus':
+        case 'Profile':
           return Icons.workspace_premium_rounded;
         case 'Dosen':
           return Icons.people_outline_rounded;
@@ -256,7 +257,7 @@ class DashboardPage extends ConsumerWidget {
                                     targetPage = const DosenPage();
                                     break;
 
-                                  case 'Mahasiswa Lulus':
+                                  case 'Profile':
                                     targetPage = const ProfilePage();
                                     break;
                                 }
